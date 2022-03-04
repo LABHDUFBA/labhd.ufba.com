@@ -1,0 +1,14 @@
+# this is a basic workflow that will test if the PR is mergeable
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  test_pr:
+    runs_on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checagem se o PR pode ser feito
+        run: echo "Obrigado por criar o PR."
