@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'Esse é o seu primeiro ticket! Não se esqueça de seguir as recomendações do template, manter a educação e tornar explícito as demandas, dúvidas ou comentários.'
+        pr-message: 'Esse é o seu primeiro pull request! Não se esqueça de seguir as recomendações do template, manter a educação e explicitar as alterações, exclusões, acréscimos realizados pelo pr atual.'
